@@ -1,0 +1,12 @@
+services:
+  currency-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: currency-app:latest
+    container_name: currency-api
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      OXR_API_KEY: ${OXR_API_KEY}
